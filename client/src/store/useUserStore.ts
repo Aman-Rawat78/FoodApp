@@ -60,6 +60,8 @@ export const useUserStore = create<UserState>()(persist((set) => ({
         } catch (error: any) {
             toast.error(error.response.data.message);
             set({ loading: false });
+        }finally{
+            set({ loading: false });
         }
     },
 
@@ -86,6 +88,8 @@ export const useUserStore = create<UserState>()(persist((set) => ({
              
             toast.error(error.response.data.message);
             set({ loading: false });
+        }finally{
+            set({ loading: false });
         }
     },
 
@@ -105,6 +109,8 @@ export const useUserStore = create<UserState>()(persist((set) => ({
         } catch (error: any) {
             toast.success(error.response.data.message);
             set({ loading: false });
+        }finally{
+            set({ loading: false });
         }
     },
 
@@ -118,6 +124,8 @@ export const useUserStore = create<UserState>()(persist((set) => ({
             }
         } catch (error) {
             set({isAuthenticated: false, isCheckingAuth: false });
+        }finally{
+            set({ loading: false });
         }
     },
 
@@ -135,6 +143,8 @@ export const useUserStore = create<UserState>()(persist((set) => ({
         } catch (error:any) {
             toast.error(error.response.data.message);
             set({ loading: false });
+        }finally{
+            set({ loading: false });
         }
     },
 
@@ -150,6 +160,8 @@ export const useUserStore = create<UserState>()(persist((set) => ({
             }
         } catch (error: any) {
             toast.error(error.response.data.message);
+            set({ loading: false });
+        }finally{
             set({ loading: false });
         }
     },
@@ -168,6 +180,8 @@ export const useUserStore = create<UserState>()(persist((set) => ({
         } catch (error: any) {
             toast.error(error.response.data.message);
             set({ loading: false });
+        }finally{
+            set({ loading: false });
         }
     },
 
@@ -185,6 +199,8 @@ export const useUserStore = create<UserState>()(persist((set) => ({
             }
         } catch (error:any) { 
             toast.error(error.response.data.message);
+        }finally{
+            set({ loading: false });
         }
     }
 }),

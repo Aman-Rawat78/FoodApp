@@ -48,11 +48,15 @@ export const useRestaurantStore = create<RestaurantState>()(persist((set, get) =
             if (response.data.success) {
              
                 set({ loading: false, restaurant: response.data.restaurant });
+            }else{
+                set({restaurant:null});
             }
         } catch (error: any) {
             if (error.response.status === 404) {
                 set({ restaurant: null });
             }
+            set({ loading: false });
+        }finally{
             set({ loading: false });
         }
     },
